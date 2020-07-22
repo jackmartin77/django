@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	{% include "snippets/styles.html" %}
+	{% block app_css %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+	{% endblock app_css %}
+</head>
+<body>
+	<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      {% block header %}
+      	
+      {% endblock header %}
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+    	
+        {% block content1 %}
+        	
+        {% endblock content1 %}
+      
+    </div>
+
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+    	<div class="container">
+    		{% block content2 %}
+    			
+    		{% endblock content2 %}
+    	</div>
+    </section>
+    <!-- End Featured Services Section -->
+
+	{% include "snippets/script.html" %}
+</body>
+</html>

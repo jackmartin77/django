@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block header %}
+	<h1 class="logo mr-auto">Melanoma</h1>
+{% endblock header %}
+
+{% block content1 %}
+	<div class="row">
+		<div class="col-lg-6 pt-5 pt-lg-0 order-lg-1 d-flex flex-column justify-content-center">
+			<h1>Kanker Kulit Melanoma</h1>
+			<h2>Kanker kulit melanoma adalah jenis kanker yang berkembang pada melanosit, sel pigmen kulit yang berfungsi sebagai penghasil melanin.</h2>
+			<div class="d-flex">
+				<form method="POST" action="/get_image/" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input type="file" id="file" name="image" onclick="fileValidation()" hidden>
+					<label for="file" class="btn-get-started scrollto">Upload Gambar</label>
+					<button type="submit" class="btn-get-started scrollto">Testing</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-lg-6 order-lg-2 hero-img" id="imagePreview">
+		</div>
+	</div>
+{% endblock content1 %}
+
+{% block content2 %}
+	<div class="row" id="box">
+		<div class="col-lg-4 col-md-6 mt-4 mt-md-0 cols">
+		</div>
+		<div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+			<div class="icon-box">
+				<h4 class="title">Akurasi :</a></h4>
+				<p class="description"></p>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+			<div class="icon-box">
+				<h4 class="title">Hasil Identifikasi :</a></h4>
+				<p class="description"></p>
+			</div>
+		</div>
+	</div>
+{% endblock content2 %}
